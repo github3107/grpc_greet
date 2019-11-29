@@ -13,8 +13,11 @@ var packageDefinition = protoLoader.loadSync(
 var hello_proto = grpc.loadPackageDefinition(packageDefinition).helloworld;
 
 function main() {
-  var client = new hello_proto.Greeter('10.0.2.15:50051',
+  var serviceIP = process.env.SERVICE_IP || "localhost";
+  console.log("process.env.SERVICE_IP=="+serviceIP);
+  var client = new hello_proto.Greeter(process.env.SERVICE_IP+':50051',
                                        grpc.credentials.createInsecure());
+  console.log("client connected to service at "+ serviceIP);
   var user;
   if (process.argv.length >= 3) {
     user = "RameshP";
