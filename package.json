@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "greet_server.js",
-  "start": "greet_server.js",
+  "start": "node greet_server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
