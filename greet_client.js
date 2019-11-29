@@ -13,7 +13,7 @@ var packageDefinition = protoLoader.loadSync(
 var hello_proto = grpc.loadPackageDefinition(packageDefinition).helloworld;
 
 function main() {
-  var client = new hello_proto.Greeter('172.17.0.15:50051',
+  var client = new hello_proto.Greeter('10.0.2.15:50051',
                                        grpc.credentials.createInsecure());
   var user;
   if (process.argv.length >= 3) {
